@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HUMANI | Sistema de gestión</title>
+
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+
+<body>
+
+<header class="barra-navegacion">
+
+    <div class="contenedor barra-contenido">
+
+        <a href="/" class="logo">
+            HUMANI
+        </a>
+
+        <nav>
+
+            <a href="/" class="enlace-nav">
+                Inicio
+            </a>
+
+            <a href="/usuarios" class="enlace-nav">
+                Usuarios
+            </a>
+
+            <a href="/productos" class="enlace-nav">
+                Productos
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="contenedor">
+
+    <section class="hero">
+
+        <div class="hero-contenido">
+
+            <span class="etiqueta">
+                SISTEMA DE GESTIÓN
+            </span>
+
+            <h1>
+                Bienvenido a <strong>HUMANI</strong>
+            </h1>
+
+            <p>
+                Gestiona usuarios y productos de manera
+                sencilla, organizada y eficiente.
+            </p>
+
+            <div class="botones">
+
+                <a href="/usuarios" class="boton boton-principal">
+                    Gestionar usuarios
+                </a>
+
+                <a href="/productos" class="boton boton-secundario">
+                    Gestionar productos
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="tarjetas">
+
+        <div class="tarjeta">
+
+            <div class="icono">
+                👤
+            </div>
+
+            <h2>
+                Usuarios
+            </h2>
+
+            <p>
+                Registra, consulta y elimina los usuarios
+                registrados en el sistema.
+            </p>
+
+            <a href="/usuarios" class="boton boton-principal">
+                Ver usuarios
+            </a>
+
+        </div>
+
+
+        <div class="tarjeta">
+
+            <div class="icono">
+                📦
+            </div>
+
+            <h2>
+                Productos
+            </h2>
+
+            <p>
+                Administra el inventario de productos,
+                cantidades, categorías y precios.
+            </p>
+
+            <a href="/productos" class="boton boton-principal">
+                Ver productos
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="informacion">
+
+        <h2>
+            Sobre HUMANI
+        </h2>
+
+        <p>
+            HUMANI es un sistema desarrollado con
+            Java y Spring Boot, conectado a una base
+            de datos MySQL para almacenar y gestionar
+            la información del sistema.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 HUMANI - Sistema de gestión
+    </p>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HUMANI | Producto</title>
+
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+</head>
+
+<body>
+
+<header class="barra-navegacion">
+
+    <div class="contenedor barra-contenido">
+
+        <a href="/" class="logo">
+            HUMANI
+        </a>
+
+        <nav>
+
+            <a href="/" class="enlace-nav">
+                Inicio
+            </a>
+
+            <a href="/usuarios" class="enlace-nav">
+                Usuarios
+            </a>
+
+            <a href="/productos" class="enlace-nav activo">
+                Productos
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="contenedor">
+
+    <section class="formulario-seccion">
+
+        <div class="formulario-cabecera">
+
+            <span class="etiqueta"
+                  th:if="${producto.id == null}">
+                NUEVO PRODUCTO
+            </span>
+
+            <span class="etiqueta"
+                  th:if="${producto.id != null}">
+                EDITAR PRODUCTO
+            </span>
+
+            <h1
+                    th:if="${producto.id == null}">
+                Registrar producto
+            </h1>
+
+            <h1
+                    th:if="${producto.id != null}">
+                Modificar producto
+            </h1>
+
+            <p>
+                Complete los datos del producto
+                para guardar la información en HUMANI.
+            </p>
+
+        </div>
+
+
+        <form
+                th:action="@{/productos/guardar}"
+                th:object="${producto}"
+                method="post"
+                class="formulario">
+
+            <!-- ID del producto cuando se está editando -->
+            <input
+                    type="hidden"
+                    th:field="*{id}">
+
+
+            <div class="campo">
+
+                <label for="nombre">
+                    Nombre del producto
+                </label>
+
+                <input
+                        type="text"
+                        id="nombre"
+                        th:field="*{nombre}"
+                        placeholder="Ingrese el nombre del producto"
+                        required>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="cantidad">
+                    Cantidad
+                </label>
+
+                <input
+                        type="number"
+                        id="cantidad"
+                        th:field="*{cantidad}"
+                        min="0"
+                        placeholder="Ingrese la cantidad"
+                        required>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="categoria">
+                    Categoría
+                </label>
+
+                <input
+                        type="text"
+                        id="categoria"
+                        th:field="*{categoria}"
+                        placeholder="Ejemplo: Tecnología, Alimentos..."
+                        required>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="almacenamiento">
+                    Almacenamiento
+                </label>
+
+                <input
+                        type="text"
+                        id="almacenamiento"
+                        th:field="*{almacenamiento}"
+                        placeholder="Ejemplo: Bodega A, Estante 2..."
+                        required>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="precio">
+                    Precio
+                </label>
+
+                <input
+                        type="number"
+                        id="precio"
+                        th:field="*{precio}"
+                        min="0"
+                        step="0.01"
+                        placeholder="Ingrese el precio"
+                        required>
+
+            </div>
+
+
+            <div class="formulario-botones">
+
+                <a
+                        href="/productos"
+                        class="boton boton-secundario">
+
+                    Cancelar
+
+                </a>
+
+                <button
+                        type="submit"
+                        class="boton boton-principal">
+
+                    <span th:if="${producto.id == null}">
+                        Guardar producto
+                    </span>
+
+                    <span th:if="${producto.id != null}">
+                        Actualizar producto
+                    </span>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 HUMANI - Sistema de gestión
+    </p>
+
+</footer>
+
+</body>
+
+</html>

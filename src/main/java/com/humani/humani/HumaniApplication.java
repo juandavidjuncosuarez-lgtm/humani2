@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class HumaniApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HumaniApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(HumaniApplication.class, args);
+    }
 }
